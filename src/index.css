@@ -2,41 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Financial Theme Design System - Professional Blue & White */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Primary financial blue theme */
+    --background: 248 250 252;
+    --foreground: 203 49% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 203 49% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 203 49% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 213 89% 37%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 213 89% 42%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 213 20% 95%;
+    --secondary-foreground: 213 89% 37%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 213 20% 96%;
+    --muted-foreground: 213 15% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 213 89% 37%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 213 20% 90%;
+    --input: 213 20% 95%;
+    --ring: 213 89% 37%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+    
+    /* Financial gradients and effects */
+    --gradient-primary: linear-gradient(135deg, hsl(213 89% 37%), hsl(213 89% 42%));
+    --gradient-hero: linear-gradient(135deg, hsl(213 89% 37%), hsl(220 100% 50%));
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-large: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +108,27 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  /* Financial component utilities */
+  .financial-shadow {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .financial-card {
+    @apply bg-card rounded-lg shadow-md border border-border p-6;
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
   }
 }
